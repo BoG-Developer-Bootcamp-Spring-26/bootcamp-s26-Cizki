@@ -17,8 +17,21 @@
  */
 function toLetterGrade(numGrade) {
   // TODO
+  if (numGrade >= 90){
+    return "A";
 }
-
+  else if (numGrade>=80){
+    return "B";
+  }
+  else if (numGrade>=70){
+    return "C";
+  }
+  else if (numGrade>=60){
+    return "D";
+  }
+  else if (numGrade<60 && numGrade >=0){
+    return "F";
+  }
 /**
  * Task 2: Create a function that takes in an array of integers and returns a
  * new array containing only even elements from the original array. The

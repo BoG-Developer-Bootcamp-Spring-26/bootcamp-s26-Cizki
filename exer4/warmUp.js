@@ -61,7 +61,14 @@ function getEvenElements(array) {
  */
 function findLongestWord(string) {
   // TODO
-  
+  var sentenceArray = string.split(); // ["I", "love", "Bits", "of", "Good"]
+  const maxLength;
+  for(const fragment in  sentenceArray){
+    currLength = fragment.length()
+    if (currLength > maxLength){
+      maxLength = currLength;
+    }
+  }
 }
 
 /**
@@ -87,6 +94,7 @@ function findLongestWord(string) {
  */
 function combineObjects(object1, object2) {
   // TODO
+  return mergedObj = {object1, object2};
 }
 
 /**
@@ -99,6 +107,10 @@ function combineObjects(object1, object2) {
  */
 function reverseArr(array) {
   // TODO
+  var newArray = [];
+  for (let i = array.length - 1; i >= 0; i--){
+    newArray.append(array[i]);
+  }
 }
 
 // DO NOT EDIT BELOW THIS LINE -- the code is for testing purposes only!

@@ -33,20 +33,30 @@ const gold = {
 getRealTimeRailCoordinates();
 
 export default async function getRealTimeRailCoordinates() {
-  let requestSettings = {
-    method: "get",
-    url: "https://developerservices.itsmarta.com:18096/railrealtimearrivals?apiKey=aa09b111-e99b-4a7c-83f7-8cb6ce8857f7",
-    httpsAgent: new https.Agent({
-      rejectUnauthorized: false,
-    }),
-  };
-  let res = await axios(requestSettings);
+  try {
+    let requestSettings = {
+      method: "get",
+      url: "https://developerservices.itsmarta.com:18096/railrealtimearrivals?apiKey=aa09b111-e99b-4a7c-83f7-8cb6ce8857f7",
+      httpsAgent: new https.Agent({
+        rejectUnauthorized: false,
+      }),
+    };
+    let res = await axios(requestSettings);
 
-  if (JSON.stringify(res.data) == "{}") {
+    if (JSON.stringify(res.data) == "{}") {
+      res.data.RailArrivals = [];
+      res.data.RailArrivals.push(blue);
+      res.data.RailArrivals.push(gold);
+    }
+
+    return res.data.RailArrivals;
+  } catch (error) {
+    let res = {};
+    res.data = {};
     res.data.RailArrivals = [];
     res.data.RailArrivals.push(blue);
     res.data.RailArrivals.push(gold);
+    return res.data.RailArrivals;
   }
 
-  return res.data.RailArrivals;
 }

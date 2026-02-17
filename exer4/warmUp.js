@@ -41,6 +41,13 @@ function toLetterGrade(numGrade) {
  */
 function getEvenElements(array) {
   // TODO
+  var evenArray = [];
+  for (const num in array){
+    if(num % 2 == 0){
+      evenArray.append(num);
+    }
+  return evenArray;
+  }
 }
 
 /**
@@ -54,6 +61,7 @@ function getEvenElements(array) {
  */
 function findLongestWord(string) {
   // TODO
+  
 }
 
 /**

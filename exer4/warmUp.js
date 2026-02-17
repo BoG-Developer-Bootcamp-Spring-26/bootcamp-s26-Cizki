@@ -29,9 +29,10 @@ function toLetterGrade(numGrade) {
   else if (numGrade>=60){
     return "D";
   }
-  else if (numGrade<60 && numGrade >=0){
+  else if (numGrade >=0){
     return "F";
   }
+}
 /**
  * Task 2: Create a function that takes in an array of integers and returns a
  * new array containing only even elements from the original array. The
@@ -42,13 +43,14 @@ function toLetterGrade(numGrade) {
 function getEvenElements(array) {
   // TODO
   var evenArray = [];
-  for (const num in array){
+  for (const num of array){
     if(num % 2 == 0){
-      evenArray.append(num);
+      evenArray.push(num);
     }
   return evenArray;
   }
 }
+
 
 /**
  * Task 3: Create a function that takes in a sentence and returns the LENGTH
@@ -61,16 +63,17 @@ function getEvenElements(array) {
  */
 function findLongestWord(string) {
   // TODO
-  var sentenceArray = string.split(); // ["I", "love", "Bits", "of", "Good"]
-  const maxLength;
-  for(const fragment in  sentenceArray){
-    currLength = fragment.length()
+  var sentenceArray = string.split(" "); 
+  let maxLength = 0;                     
+  
+  for(const fragment of sentenceArray) { 
+    let currLength = fragment.length;    
     if (currLength > maxLength){
       maxLength = currLength;
     }
   }
+  return maxLength;                      
 }
-
 /**
  * Task 4: Create a function that takes in 2 objects and return an object that 
  * is the combination of the 2
@@ -94,9 +97,8 @@ function findLongestWord(string) {
  */
 function combineObjects(object1, object2) {
   // TODO
-  return mergedObj = {object1, object2};
+  return {...object1, ...object2};
 }
-
 /**
  *  Task 5: Create a function that takes an array as an argument and returns
  *  the reverse array.
@@ -109,8 +111,9 @@ function reverseArr(array) {
   // TODO
   var newArray = [];
   for (let i = array.length - 1; i >= 0; i--){
-    newArray.append(array[i]);
+    newArray.push(array[i]);
   }
+  return newArray
 }
 
 // DO NOT EDIT BELOW THIS LINE -- the code is for testing purposes only!

@@ -17,9 +17,12 @@
  */
 function toLetterGrade(numGrade) {
   // TODO
-  if (numGrade >= 90){
+  if (numGrade > 100 || numGrade < 0){
+    return "INVALID";
+  }
+  else if (numGrade >= 90){
     return "A";
-}
+  }
   else if (numGrade>=80){
     return "B";
   }
@@ -47,8 +50,9 @@ function getEvenElements(array) {
     if(num % 2 == 0){
       evenArray.push(num);
     }
-  return evenArray;
   }
+  return evenArray;
+
 }
 
 

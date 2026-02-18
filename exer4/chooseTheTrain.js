@@ -98,16 +98,18 @@ function getTrainComingIn1Minute(arrivals) {
  *
  */
 function updateLineColor(arrivals) {
-  // TODO
-  var blueLineArrivals = [];
-  for (i = 0; i<= arrivals.length-1; i++){
-    if ("Blue line" in arrivals){
-      blueLineArrivals.push(arrivals)
-    }
-  }
+    var blueTrains = arrivals.filter(function(train) {
+    return train.LINE === 'BLUE'; 
+  });
 
+  var pinkTrains = blueTrains.map(function(train) {
+    return {
+      ...train,
+      LINE: 'PINK'
+    };
+  });
+  return pinkTrains;
 }
-
 /*
   TESTS:
     You may want to run these one at a time to see the output. If you run them and the API call works,

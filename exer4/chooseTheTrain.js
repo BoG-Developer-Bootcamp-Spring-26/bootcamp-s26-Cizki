@@ -58,13 +58,15 @@ function getKeysToArr(arrivals){
  * DO NOT MODIFY railArray! You'll need it for later
  */
 function getTrainComingIn1Minute(arrivals) {
-  // TODO
+// TODO
   var arrivalsArray = [];
-  for(i = 0; i <= arrivals.length; i++){
-    if (arrivals["WAITING_TIME"]=="1 min"){
-      arrivalsArray.push(arrivals[i]);
+  
+  arrivals.forEach(function(train) {
+    if (train.WAITING_TIME === "1 min") { 
+      arrivalsArray.push(train);
     }
-  }
+  });
+  return arrivalsArray;
 }
 
 /**
@@ -97,6 +99,13 @@ function getTrainComingIn1Minute(arrivals) {
  */
 function updateLineColor(arrivals) {
   // TODO
+  var blueLineArrivals = [];
+  for (i = 0; i<= arrivals.length-1; i++){
+    if ("Blue line" in arrivals){
+      blueLineArrivals.push(arrivals)
+    }
+  }
+
 }
 
 /*

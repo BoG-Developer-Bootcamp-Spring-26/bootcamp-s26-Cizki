@@ -6,12 +6,19 @@ const URL = "https://pokeapi.co/api/v2/pokemon";
 function App() {
   const [dexNumber, setDexNumber] = useState(1);
   const [pokemon, setPokemon] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     fetch(`${URL}/${dexNumber}/`)
       .then((res) => res.json())
       .then((data) => {
         setPokemon(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
       });
   }, [dexNumber]);
 
@@ -32,7 +39,8 @@ function App() {
         <button onClick={handlePrev}>{"<"}</button>
         <button onClick={handleNext}>{">"}</button>
       </div>
-      {pokemon && <p>{pokemon.name}</p>}
+      {loading && <p>Loading...</p>}
+      {!loading && pokemon && <p>{pokemon.name}</p>}
     </div>
   );
 }

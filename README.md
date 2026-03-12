@@ -1,16 +1,14 @@
-# dev-bootcamp-s26
+# Exercise 5 - PokeDex
 
-## Spring 26 Dev Bootcamp Exercises
+A React Pokedex app using the PokeAPI.
 
-This repository contains all the exercises and resources needed for the Spring 2026 Dev Bootcamp.
+## How to run
 
-## Submitting Projects & Exercises
+npm install
+npm start
 
-Throughout this bootcamp, bootcampers will submit projects and exercises through GitHub. We will utilize GitHub Organizations to make this happen.
-
-This repo contains information and starter code for lectures, exercises, and projects. As a bootcamper, you'll be uploading all of your exercise submissions to your forked repository. Make sure to frequently click **Sync Fork** on GitHub to make sure you have up-to-date exercises and projects!
-
-## Getting Started
-
-1. Do `exer1` for setting up your dev environment.
-2. After this, do `exer2` to set up your forked repository where you'll do future exercises and play around with demos.
+## Features
+- Click the arrow buttons to go through different pokemon
+- View stats like height, weight, hp, attack, etc
+- View all the moves a pokemon can learn
+- Types are color coded

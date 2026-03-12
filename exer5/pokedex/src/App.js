@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import PokemonCard from "./components/PokemonCard";
+import InfoPanel from "./components/InfoPanel";
+import MovesPanel from "./components/MovesPanel";
 
 const URL = "https://pokeapi.co/api/v2/pokemon";
 
@@ -8,6 +10,7 @@ function App() {
   const [dexNumber, setDexNumber] = useState(1);
   const [pokemon, setPokemon] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [showInfo, setShowInfo] = useState(true);
 
   useEffect(() => {
     setLoading(true);
@@ -41,7 +44,14 @@ function App() {
         <button onClick={handleNext}>{">"}</button>
       </div>
       {loading && <p>Loading...</p>}
-      {!loading && pokemon && <PokemonCard pokemon={pokemon} />}
+      {!loading && pokemon && (
+        <div>
+          <PokemonCard pokemon={pokemon} />
+          <button onClick={() => setShowInfo(true)}>Info</button>
+          <button onClick={() => setShowInfo(false)}>Moves</button>
+          {showInfo ? <InfoPanel pokemon={pokemon} /> : <MovesPanel pokemon={pokemon} />}
+        </div>
+      )}
     </div>
   );
 }

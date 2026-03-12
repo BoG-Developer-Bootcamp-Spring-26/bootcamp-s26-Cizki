@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import PokemonCard from "./components/PokemonCard";
 
 const URL = "https://pokeapi.co/api/v2/pokemon";
 
@@ -40,7 +41,7 @@ function App() {
         <button onClick={handleNext}>{">"}</button>
       </div>
       {loading && <p>Loading...</p>}
-      {!loading && pokemon && <p>{pokemon.name}</p>}
+      {!loading && pokemon && <PokemonCard pokemon={pokemon} />}
     </div>
   );
 }

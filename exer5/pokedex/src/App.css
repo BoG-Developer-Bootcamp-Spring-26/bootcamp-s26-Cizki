@@ -60,3 +60,41 @@ body {
   opacity: 0.4;
   cursor: default;
 }
+
+.right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 360px;
+}
+
+.panel-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.panel-box {
+  background-color: #e8e8e8;
+  border-radius: 4px;
+  padding: 24px;
+  min-height: 300px;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.tab-btn {
+  border: none;
+  border-radius: 6px;
+  padding: 10px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.tab-btn:hover {
+  opacity: 0.8;
+}
